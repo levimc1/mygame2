@@ -1,0 +1,11 @@
+# XMAKE (build rendszer)
+.xmake/
+build/
+
+# IDEk2
+.vscode/
+.idea/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
