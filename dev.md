@@ -1,5 +1,8 @@
 # MYGAME
 
+## dev.md (ez a file)
+Csak ide írok mindent a projektről miközben dolgozok, nem README.md
+
 Ha akármilyen másik projektbe kezdel aminek célja egy játék, jöjjön ide!
 
 ## Konvenciók, eszközök:
@@ -10,6 +13,8 @@ Ha akármilyen másik projektbe kezdel aminek célja egy játék, jöjjön ide!
  - Legyen **Magyar nyelvű** dokumentáció, commentek, közösség. **NEM KÓD**
  - Függvény konvenció -> igével kezdődik, snake_case
  - Struct konvenció -> főnév, PascalCase
+ - Akármilyen függvény neve ne legyen túl rövid, ha van egy hoszabb érthetőbb név használd! 
+ - Teljes template nevek, amiket itt a dev.md-ben megszegek. T -> Type. E -> Error
 
 
 Az 1. projekt nem is a játék, hanem:
@@ -31,15 +36,16 @@ Valamiért nem bízok meg az ő eszközének használatában. pedig jófejnek t�
 
 ### Alaptípusok:
 **Ami nem allokál és ja.**
-Tuple<A, B, ...> -> Típusai mind léteznek
-Sum<A, B, ...> -> Csak 1 típusa lehet egyszerre 
-Result<T, E> -> Hiba vagy T
-Option<T> -> 1 T lehet hogy van, lehet hogy nincs.
-Vec<N, T> -> egyszerre N T számokkal
-Mat<R, C, T> -> mátrix dolog :/
-Array<N, T> -> szintén N darab T DE nem számokkal.
-Pair<K, V> -> Sum<K, V> extra műveletekkel
+- Tuple<A, B, ...> -> Típusai mind léteznek
+- Sum<A, B, ...> -> Csak 1 típusa lehet egyszerre 
+- Result<T, E> -> Hiba vagy T
+- Option<T> -> 1 T lehet hogy van, lehet hogy nincs.
+- Vec<N, T> -> egyszerre N T számokkal
+- Mat<R, C, T> -> mátrix dolog :/
+- Array<N, T> -> szintén N darab T DE nem számokkal.
+- Pair<K, V> -> Sum<K, V> extra műveletekkel
 **Ez még nem egy komplett model csak egy feature lista**
+Lehet kelleni fog iter, meg stb. 
 
 **Hozzászólás**
 Mind különálló, detail:: implementációkkal. Konvenció alapján jól kommentálva.
@@ -47,16 +53,20 @@ Lehetne Quat és Complex de majd ha megértem őket max :/**
 
 **Ábra:**
 
+´´´
 bstd::detail::
 ┌─────────────────────────────────────────────────────┐
 │             nyers, optimalizált, spagetti           │
 └──────────────────────┬──────────────────────────────┘
-                       │ organizálja
-                       ▼
-bstd::core::
+                       │ organizálja 
+bstd::core::           ▼
 ┌──────────────────────────────────────────────────────┐
 │         tiszta API, dokumentált, tesztelt            │
 └──────────────────────────────────────────────────────┘
+´´´
 
-Ez csak Core, lesz még ugye Map, és Owning dolgok, meg String meg bla blah blah
+Ez csak Core, lesz még ugye Map, és Owning dolgok, meg String meg bla blah blaugye Map, és Owning dolgok, meg String meg bla blah blahh
+ide fog kelleni inkább a detail.
 
+Bár néhány ilyen piszok egyszerű. és a bstd::detail:: dolog nem működne szerintem.
+Itt a probléma inkább a dependencia. Attól még mind1 egyedi lesz. 
